@@ -3,13 +3,13 @@ import java.util.EmptyStackException;
 /**
  * Parte 1 — Definición del TDA BitacoraStack
  * Las pilas almacenan elementos donde las inserciones y borrados 
- * ocurren en el "tope"[cite: 12].
+ * ocurren en el "tope".
  */
 class BitacoraStack {
     private Nodo tope;
     private int tamaño;
 
-    // Estructura de Nodo basada en la implementación de listas enlazadas [cite: 98, 100]
+    // Estructura de Nodo basada en la implementación de listas enlazadas
     private class Nodo {
         String evento;
         Nodo siguiente;
@@ -24,7 +24,7 @@ class BitacoraStack {
         this.tamaño = 0;
     }
 
-    // Operación Push: Agrega un evento a la cima [cite: 60, 108]
+    // Operación Push: Agrega un evento a la cima
     public void registrar(String evento) {
         Nodo nuevoNodo = new Nodo(evento);
         nuevoNodo.siguiente = tope;
@@ -32,7 +32,7 @@ class BitacoraStack {
         tamaño++;
     }
 
-    // Operación Top/Peek: Consulta el último sin borrar [cite: 68, 147]
+    // Operación Top/Peek: Consulta el último sin borrar
     public String consultarUltimo() {
         if (estaVacia()) {
             throw new EmptyStackException();
@@ -40,7 +40,7 @@ class BitacoraStack {
         return tope.evento;
     }
 
-    // Operación Pop: Elimina y devuelve el último [cite: 64, 127]
+    // Operación Pop: Elimina y devuelve el último
     public String eliminarUltimo() {
         if (estaVacia()) {
             throw new EmptyStackException();
@@ -51,7 +51,7 @@ class BitacoraStack {
         return evento;
     }
 
-    // Operación Vacía? [cite: 55]
+    // Operación Vacía? 
     public boolean estaVacia() {
         return tope == null;
     }
